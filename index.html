@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="uk">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Bimmer Garage</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Rajdhani:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --blue: #1a6fff;
@@ -119,7 +120,6 @@
     font-weight: 500;
   }
 
-  /* DIVIDER */
   .divider {
     display: flex;
     align-items: center;
@@ -143,7 +143,6 @@
     font-weight: 600;
   }
 
-  /* SERVICES */
   .services {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -205,7 +204,6 @@
     opacity: 0.7;
   }
 
-  /* LINKS */
   .links {
     display: flex;
     flex-direction: column;
@@ -271,7 +269,6 @@
   .link-icon svg { width: 22px; height: 22px; }
 
   .icon-phone { background: rgba(52,199,89,0.15); }
-  .icon-phone2 { background: rgba(26,111,255,0.15); }
   .icon-viber { background: rgba(126,76,183,0.15); }
   .icon-telegram { background: rgba(0,136,204,0.15); }
   .icon-instagram { background: rgba(225,48,108,0.15); }
@@ -336,154 +333,139 @@
 </head>
 <body>
 <div class="container">
-
-  <div class="header">
-    <div class="logo-wrap">
-      <img src="data:image/jpeg;base64,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" alt="Bimmer Garage">
-    </div>
-    <h1>BIMMER GARAGE</h1>
-    <p class="tagline">BMW · Ковель</p>
-  </div>
-
-  <div class="divider"><span>Послуги</span></div>
-
-  <div class="services">
-    <a href="https://www.bimmergarage.com.ua/#parts" target="_blank" class="service-btn">
-      <span class="sicon">🔧</span>
-      <span class="slabel">Запчастини BMW</span>
-      <span class="sarrow">ДЕТАЛЬНІШЕ →</span>
-    </a>
-    <a href="https://www.bimmergarage.com.ua/#services" target="_blank" class="service-btn">
-      <span class="sicon">🛠️</span>
-      <span class="slabel">СТО</span>
-      <span class="sarrow">ДЕТАЛЬНІШЕ →</span>
-    </a>
-    <a href="https://www.bimmergarage.com.ua/poslugy/deteiling/" target="_blank" class="service-btn">
-      <span class="sicon">✨</span>
-      <span class="slabel">Детейлінг</span>
-      <span class="sarrow">ДЕТАЛЬНІШЕ →</span>
-    </a>
-    <a href="https://www.bimmergarage.com.ua/#usa" target="_blank" class="service-btn">
-      <span class="sicon">🚗</span>
-      <span class="slabel">Автопригін</span>
-      <span class="sarrow">ДЕТАЛЬНІШЕ →</span>
-    </a>
-  </div>
-
-  <div class="divider"><span>Контакти</span></div>
-
-  <div class="links">
-
-    <a href="tel:+380995281010" class="link-btn">
-      <div class="link-icon icon-phone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#34c759" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-        </svg>
-      </div>
-      <div class="link-info">
-        <div class="link-label">Авторозборка</div>
-        <div class="link-value">099 528 10 10</div>
-      </div>
-      <span class="link-arrow">›</span>
-    </a>
-
-    <a href="tel:+380635454834" class="link-btn">
-      <div class="link-icon icon-phone2">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#1a6fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-        </svg>
-      </div>
-      <div class="link-info">
-        <div class="link-label">СТО · Запис · Кодування</div>
-        <div class="link-value">063 545 48 34</div>
-      </div>
-      <span class="link-arrow">›</span>
-    </a>
-
-    <a href="viber://chat?number=%2B380995281010" class="link-btn">
-      <div class="link-icon icon-viber">
-        <svg viewBox="0 0 24 24" fill="#7e4cb7" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 13.6c-.2.56-.98 1.02-1.62 1.16-.44.08-.98.14-2.84-.62-2.38-.98-3.92-3.4-4.04-3.56-.12-.16-.96-1.28-.96-2.44 0-1.16.6-1.72.82-1.96.22-.22.48-.28.64-.28h.46c.14 0 .34.04.52.42.2.42.66 1.62.72 1.74.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.26.3-.36.4-.12.12-.24.26-.1.5.14.24.62 1.02 1.34 1.66.92.82 1.7 1.08 1.94 1.2.24.1.38.08.52-.06.14-.14.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.38.66 1.62.78.24.12.4.18.46.28.06.1.06.58-.14 1.14z"/>
-        </svg>
-      </div>
-      <div class="link-info">
-        <div class="link-label">Viber</div>
-        <div class="link-value">Написати у Viber</div>
-      </div>
-      <span class="link-arrow">›</span>
-    </a>
-
-    <a href="https://t.me/bimmergarage" class="link-btn" target="_blank">
-      <div class="link-icon icon-telegram">
-        <svg viewBox="0 0 24 24" fill="#0088cc" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.68 7.92c-.12.56-.46.7-.92.44l-2.56-1.88-1.24 1.2c-.14.14-.26.26-.52.26l.18-2.6 4.72-4.26c.2-.18-.04-.28-.32-.1L7.4 13.76l-2.52-.78c-.54-.18-.56-.54.12-.8l9.84-3.8c.46-.16.86.1.8.42z"/>
-        </svg>
-      </div>
-      <div class="link-info">
-        <div class="link-label">Telegram</div>
-        <div class="link-value">@bimmergarage</div>
-      </div>
-      <span class="link-arrow">›</span>
-    </a>
-
-    <a href="https://www.instagram.com/bimmergaragekovel/" class="link-btn" target="_blank">
-      <div class="link-icon icon-instagram">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#f09433"/>
-              <stop offset="25%" stop-color="#e6683c"/>
-              <stop offset="50%" stop-color="#dc2743"/>
-              <stop offset="75%" stop-color="#cc2366"/>
-              <stop offset="100%" stop-color="#bc1888"/>
-            </linearGradient>
-          </defs>
-          <rect x="2" y="2" width="20" height="20" rx="5" fill="url(#ig)"/>
-          <circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.5" fill="none"/>
-          <circle cx="17" cy="7" r="1" fill="white"/>
-        </svg>
-      </div>
-      <div class="link-info">
-        <div class="link-label">Instagram</div>
-        <div class="link-value">@bimmergaragekovel</div>
-      </div>
-      <span class="link-arrow">›</span>
-    </a>
-
-    <a href="https://www.tiktok.com/@bimmer_garage1" class="link-btn" target="_blank">
-      <div class="link-icon icon-tiktok">
-        <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/>
-        </svg>
-      </div>
-      <div class="link-info">
-        <div class="link-label">TikTok</div>
-        <div class="link-value">@bimmer_garage1</div>
-      </div>
-      <span class="link-arrow">›</span>
-    </a>
-
-    <a href="https://www.bimmergarage.com.ua/" class="link-btn" target="_blank">
-      <div class="link-icon icon-web">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#1a6fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="2" y1="12" x2="22" y2="12"/>
-          <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
-        </svg>
-      </div>
-      <div class="link-info">
-        <div class="link-label">Сайт</div>
-        <div class="link-value">bimmergarage.com.ua</div>
-      </div>
-      <span class="link-arrow">›</span>
-    </a>
-
-  </div>
-
-  <div class="city-badge">
-    <span>📍 Ковель, Україна</span>
-  </div>
-
+<div class="header">
+<div class="logo-wrap">
+<img alt="Bimmer Garage" src="1.png"/>
+</div>
+<h1>BIMMER GARAGE</h1>
+<p class="tagline">BMW · Ковель</p>
+</div>
+<div class="divider"><span>Послуги</span></div>
+<div class="services">
+<a class="service-btn" href="https://www.bimmergarage.com.ua/#parts" target="_blank">
+<span class="sicon">🔧</span>
+<span class="slabel">Запчастини BMW</span>
+<span class="sarrow">ДЕТАЛЬНІШЕ →</span>
+</a>
+<a class="service-btn" href="https://www.bimmergarage.com.ua/#services" target="_blank">
+<span class="sicon">🛠️</span>
+<span class="slabel">СТО</span>
+<span class="sarrow">ДЕТАЛЬНІШЕ →</span>
+</a>
+<a class="service-btn" href="https://www.bimmergarage.com.ua/poslugy/deteiling/" target="_blank">
+<span class="sicon">✨</span>
+<span class="slabel">Детейлінг</span>
+<span class="sarrow">ДЕТАЛЬНІШЕ →</span>
+</a>
+<a class="service-btn" href="https://www.bimmergarage.com.ua/#usa" target="_blank">
+<span class="sicon">🚗</span>
+<span class="slabel">Автопригін</span>
+<span class="sarrow">ДЕТАЛЬНІШЕ →</span>
+</a>
+</div>
+<div class="divider"><span>Контакти</span></div>
+<div class="links">
+<a class="link-btn" href="tel:+380995281010">
+<div class="link-icon icon-phone">
+<svg fill="none" stroke="#34c759" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path>
+</svg>
+</div>
+<div class="link-info">
+<div class="link-label">Власник</div>
+<div class="link-value">099 528 10 10</div>
+</div>
+<span class="link-arrow">›</span>
+</a>
+<a class="link-btn" href="tel:+380635454834">
+<div class="link-icon icon-phone">
+<svg fill="none" stroke="#34c759" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path>
+</svg>
+</div>
+<div class="link-info">
+<div class="link-label">Запис на СТО та кодування</div>
+<div class="link-value">063 545 48 34</div>
+</div>
+<span class="link-arrow">›</span>
+</a>
+<a class="link-btn" href="viber://chat?number=%2B380995281010">
+<div class="link-icon icon-viber">
+<svg fill="#7e4cb7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 13.6c-.2.56-.98 1.02-1.62 1.16-.44.08-.98.14-2.84-.62-2.38-.98-3.92-3.4-4.04-3.56-.12-.16-.96-1.28-.96-2.44 0-1.16.6-1.72.82-1.96.22-.22.48-.28.64-.28h.46c.14 0 .34.04.52.42.2.42.66 1.62.72 1.74.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.26.3-.36.4-.12.12-.24.26-.1.5.14.24.62 1.02 1.34 1.66.92.82 1.7 1.08 1.94 1.2.24.1.38.08.52-.06.14-.14.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.38.66 1.62.78.24.12.4.18.46.28.06.1.06.58-.14 1.14z"></path>
+</svg>
+</div>
+<div class="link-info">
+<div class="link-label">Viber</div>
+<div class="link-value">Написати у Viber</div>
+</div>
+<span class="link-arrow">›</span>
+</a>
+<a class="link-btn" href="https://t.me/bimmergarage" target="_blank">
+<div class="link-icon icon-telegram">
+<svg fill="#0088cc" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.68 7.92c-.12.56-.46.7-.92.44l-2.56-1.88-1.24 1.2c-.14.14-.26.26-.52.26l.18-2.6 4.72-4.26c.2-.18-.04-.28-.32-.1L7.4 13.76l-2.52-.78c-.54-.18-.56-.54.12-.8l9.84-3.8c.46-.16.86.1.8.42z"></path>
+</svg>
+</div>
+<div class="link-info">
+<div class="link-label">Telegram</div>
+<div class="link-value">@bimmergarage</div>
+</div>
+<span class="link-arrow">›</span>
+</a>
+<a class="link-btn" href="https://www.instagram.com/bimmergaragekovel/" target="_blank">
+<div class="link-icon icon-instagram">
+<svg fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="ig" x1="0%" x2="100%" y1="100%" y2="0%">
+<stop offset="0%" stop-color="#f09433"></stop>
+<stop offset="25%" stop-color="#e6683c"></stop>
+<stop offset="50%" stop-color="#dc2743"></stop>
+<stop offset="75%" stop-color="#cc2366"></stop>
+<stop offset="100%" stop-color="#bc1888"></stop>
+</lineargradient>
+</defs>
+<rect fill="url(#ig)" height="20" rx="5" width="20" x="2" y="2"></rect>
+<circle cx="12" cy="12" fill="none" r="4" stroke="white" stroke-width="1.5"></circle>
+<circle cx="17" cy="7" fill="white" r="1"></circle>
+</svg>
+</div>
+<div class="link-info">
+<div class="link-label">Instagram</div>
+<div class="link-value">@bimmergaragekovel</div>
+</div>
+<span class="link-arrow">›</span>
+</a>
+<a class="link-btn" href="https://www.tiktok.com/@bimmer_garage1" target="_blank">
+<div class="link-icon icon-tiktok">
+<svg fill="white" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"></path>
+</svg>
+</div>
+<div class="link-info">
+<div class="link-label">TikTok</div>
+<div class="link-value">@bimmer_garage1</div>
+</div>
+<span class="link-arrow">›</span>
+</a>
+<a class="link-btn" href="https://www.bimmergarage.com.ua/" target="_blank">
+<div class="link-icon icon-web">
+<svg fill="none" stroke="#1a6fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="2" x2="22" y1="12" y2="12"></line>
+<path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"></path>
+</svg>
+</div>
+<div class="link-info">
+<div class="link-label">Сайт</div>
+<div class="link-value">bimmergarage.com.ua</div>
+</div>
+<span class="link-arrow">›</span>
+</a>
+</div>
+<div class="city-badge">
+<span>📍 Ковель, Україна</span>
+</div>
 </div>
 </body>
 </html>
