@@ -233,14 +233,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 12px;
+    gap: 10px;
+    padding: 11px;
     border-radius: 10px;
     text-decoration: none;
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 0.5px;
     transition: all 0.25s ease;
+  }
+
+  /* СТИЛІЗАЦІЯ ІКОНОК НАВІГАТОРІВ */
+  .nav-btn img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    border-radius: 4px;
   }
 
   .btn-google {
@@ -266,8 +274,6 @@
     border-color: #31c5f3;
     box-shadow: 0 4px 15px rgba(49, 197, 243, 0.2);
   }
-
-  .nav-icon { font-size: 16px; }
 
   /* СТИЛІ ДЛЯ ПОСИЛАНЬ */
   .links {
@@ -400,7 +406,6 @@
 <body>
 <div class="container">
   
-  <!-- ХЕДЕР -->
   <div class="header">
     <div class="logo-wrap">
       <img alt="Bimmer Garage" src="1.png"/>
@@ -409,7 +414,6 @@
     <p class="tagline">BMW · Ковель</p>
   </div>
 
-  <!-- ПОСЛУГИ -->
   <div class="divider"><span>Послуги</span></div>
   <div class="services">
     <a class="service-btn" href="https://www.bimmergarage.com.ua/#parts" target="_blank">
@@ -434,12 +438,11 @@
     </a>
   </div>
 
-  <!-- БЛОК: КАРТА ДОЇЗДУ -->
   <div class="divider"><span>Карта доїзду</span></div>
   <div class="map-block">
     <div class="map-container">
       <iframe 
-        src="https://maps.google.com/maps?q=51.239483,24.666673&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10123.649666014493!2d24.666673!3d51.239483!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTEzMTQnMjIuMSJOIDI0wrA0MCcwMC4wIkU!5e0!3m2!1suk!2sua!4v1710000000000!5m2!1suk!2sua" 
         allowfullscreen="" 
         loading="lazy" 
         referrerpolicy="no-referrer-when-downgrade">
@@ -447,17 +450,16 @@
     </div>
     <div class="map-buttons">
       <a class="nav-btn btn-google" href="https://www.google.com/maps/dir/?api=1&destination=51.239483,24.666673" target="_blank">
-        <span class="nav-icon">📍</span>
+        <img src="google-maps.png" alt="Google Maps">
         <span>Google Maps</span>
       </a>
       <a class="nav-btn btn-waze" href="https://waze.com/ul?ll=51.239483,24.666673&navigate=yes" target="_blank">
-        <span class="nav-icon">🚙</span>
+        <img src="waze.png" alt="Waze">
         <span>Waze</span>
       </a>
     </div>
   </div>
 
-  <!-- КОНТАКТИ -->
   <div class="divider"><span>Контакти</span></div>
   <div class="links">
     <a class="link-btn" href="tel:+380995281010">
@@ -565,7 +567,6 @@
     </a>
   </div>
 
-  <!-- ФУТЕР -->
   <div class="city-badge">
     <span>📍 Ковель, Україна</span>
   </div>
