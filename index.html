@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bimmer Garage</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --blue: #1a6fff;
@@ -187,95 +187,22 @@
 
   .service-btn:hover::before { opacity: 1; }
 
-  .service-btn .sicon { font-size: 22px; }
-  .service-btn .slabel { font-size: 12px; line-height: 1.3; }
-  .service-btn .sarrow { font-size: 10px; color: var(--blue); letter-spacing: 1px; opacity: 0.7; }
-
-  /* СТИЛІ ДЛЯ БЛОКУ КАРТИ */
-  .map-block {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 12px;
-    margin-bottom: 24px;
-    animation: fadeUp 0.6s 0.2s ease both;
-    overflow: hidden;
+  .service-btn .sicon {
+    font-size: 22px;
   }
 
-  .map-container {
-    width: 100%;
-    height: 180px;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    margin-bottom: 12px;
+  .service-btn .slabel {
+    font-size: 12px;
+    line-height: 1.3;
   }
 
-  .map-container iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    filter: grayscale(0.3) contrast(1.1) brightness(0.9);
-    transition: filter 0.3s ease;
-  }
-  
-  .map-container:hover iframe {
-    filter: grayscale(0) contrast(1) brightness(1);
+  .service-btn .sarrow {
+    font-size: 10px;
+    color: var(--blue);
+    letter-spacing: 1px;
+    opacity: 0.7;
   }
 
-  .map-buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .nav-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 11px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    transition: all 0.25s ease;
-  }
-
-  /* СТИЛІЗАЦІЯ ІКОНОК НАВІГАТОРІВ */
-  .nav-btn img {
-    width: 22px;
-    height: 22px;
-    object-fit: contain;
-    border-radius: 4px;
-  }
-
-  .btn-google {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--border);
-    color: var(--text);
-  }
-
-  .btn-google:hover {
-    background: rgba(66, 133, 244, 0.15);
-    border-color: #4285f4;
-    box-shadow: 0 4px 15px rgba(66, 133, 244, 0.2);
-  }
-
-  .btn-waze {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--border);
-    color: var(--text);
-  }
-
-  .btn-waze:hover {
-    background: rgba(49, 197, 243, 0.15);
-    border-color: #31c5f3;
-    box-shadow: 0 4px 15px rgba(49, 197, 243, 0.2);
-  }
-
-  /* СТИЛІ ДЛЯ ПОСИЛАНЬ */
   .links {
     display: flex;
     flex-direction: column;
@@ -401,84 +328,192 @@
     0% { background-position: 0% 50%; }
     100% { background-position: 100% 50%; }
   }
+
+  /* ---- Admin (приховано від звичайних відвідувачів) ---- */
+  .admin-access {
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+  }
+  .admin-access button {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 15px;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: opacity 0.2s;
+    padding: 10px;
+  }
+  .admin-access button:hover { opacity: 0.7; }
+
+  .admin-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    padding: 20px;
+  }
+  .admin-overlay.open { display: flex; }
+
+  .admin-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 380px;
+    width: 100%;
+    max-height: 82vh;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .admin-panel h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    font-size: 22px;
+    color: var(--blue);
+  }
+
+  .admin-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 22px;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .admin-panel input {
+    width: 100%;
+    padding: 11px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: #0d0d14;
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .admin-panel button[type="submit"] {
+    width: 100%;
+    padding: 11px;
+    border-radius: 10px;
+    border: none;
+    background: var(--blue);
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+  }
+
+  .admin-error {
+    color: #ff5050;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
+  .admin-loading { color: var(--muted); font-size: 13px; }
+
+  .admin-total {
+    font-size: 14px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .admin-bar-row, .admin-recent-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .admin-bar-row span:first-child, .admin-recent-row span:first-child {
+    color: var(--text);
+    font-weight: 600;
+  }
+  .admin-bar-row span:last-child { color: var(--blue); font-weight: 700; }
+  .admin-recent-row span:last-child { color: var(--muted); font-size: 11px; }
+
+  .admin-recent-title {
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  .admin-recent { max-height: 160px; overflow-y: auto; }
 </style>
 </head>
 <body>
 <div class="container">
-  
+
   <div class="header">
     <div class="logo-wrap">
-      <img alt="Bimmer Garage" src="1.png"/>
+      <img src="data:image/jpeg;base64,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" alt="Bimmer Garage">
     </div>
     <h1>BIMMER GARAGE</h1>
     <p class="tagline">BMW · Ковель</p>
   </div>
 
   <div class="divider"><span>Послуги</span></div>
+
   <div class="services">
-    <a class="service-btn" href="https://www.bimmergarage.com.ua/#parts" target="_blank">
+    <a href="https://www.bimmergarage.com.ua/#parts" target="_blank" class="service-btn" data-track="svc_parts">
       <span class="sicon">🔧</span>
       <span class="slabel">Запчастини BMW</span>
       <span class="sarrow">ДЕТАЛЬНІШЕ →</span>
     </a>
-    <a class="service-btn" href="https://www.bimmergarage.com.ua/#services" target="_blank">
+    <a href="https://www.bimmergarage.com.ua/#services" target="_blank" class="service-btn" data-track="svc_sto">
       <span class="sicon">🛠️</span>
       <span class="slabel">СТО</span>
       <span class="sarrow">ДЕТАЛЬНІШЕ →</span>
     </a>
-    <a class="service-btn" href="https://www.bimmergarage.com.ua/poslugy/deteiling/" target="_blank">
+    <a href="https://www.bimmergarage.com.ua/poslugy/deteiling/" target="_blank" class="service-btn" data-track="svc_detailing">
       <span class="sicon">✨</span>
       <span class="slabel">Детейлінг</span>
       <span class="sarrow">ДЕТАЛЬНІШЕ →</span>
     </a>
-    <a class="service-btn" href="https://www.bimmergarage.com.ua/#usa" target="_blank">
+    <a href="https://www.bimmergarage.com.ua/#usa" target="_blank" class="service-btn" data-track="svc_import">
       <span class="sicon">🚗</span>
       <span class="slabel">Автопригін</span>
       <span class="sarrow">ДЕТАЛЬНІШЕ →</span>
     </a>
   </div>
 
-  <div class="divider"><span>Карта доїзду</span></div>
-  <div class="map-block">
-    <div class="map-container">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10123.649666014493!2d24.666673!3d51.239483!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTEzMTQnMjIuMSJOIDI0wrA0MCcwMC4wIkU!5e0!3m2!1suk!2sua!4v1710000000000!5m2!1suk!2sua" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-    <div class="map-buttons">
-      <a class="nav-btn btn-google" href="https://www.google.com/maps/dir/?api=1&destination=51.239483,24.666673" target="_blank">
-        <img src="google-maps.png" alt="Google Maps">
-        <span>Google Maps</span>
-      </a>
-      <a class="nav-btn btn-waze" href="https://waze.com/ul?ll=51.239483,24.666673&navigate=yes" target="_blank">
-        <img src="waze.png" alt="Waze">
-        <span>Waze</span>
-      </a>
-    </div>
-  </div>
-
   <div class="divider"><span>Контакти</span></div>
+
   <div class="links">
-    <a class="link-btn" href="tel:+380995281010">
+
+    <a href="tel:+380995281010" class="link-btn" data-track="owner_phone">
       <div class="link-icon icon-phone">
-        <svg fill="none" stroke="#34c759" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#34c759" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
         </svg>
       </div>
       <div class="link-info">
-        <div class="link-label">Розборка</div>
+        <div class="link-label">Власник</div>
         <div class="link-value">099 528 10 10</div>
       </div>
       <span class="link-arrow">›</span>
     </a>
-    
-    <a class="link-btn" href="tel:+380635454834">
+
+    <a href="tel:+380635454834" class="link-btn" data-track="sto_phone">
       <div class="link-icon icon-phone">
-        <svg fill="none" stroke="#34c759" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#34c759" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
         </svg>
       </div>
       <div class="link-info">
@@ -487,11 +522,11 @@
       </div>
       <span class="link-arrow">›</span>
     </a>
-    
-    <a class="link-btn" href="viber://chat?number=%2B380995281010">
+
+    <a href="viber://chat?number=%2B380995281010" class="link-btn" data-track="viber">
       <div class="link-icon icon-viber">
-        <svg fill="#7e4cb7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 13.6c-.2.56-.98 1.02-1.62 1.16-.44.08-.98.14-2.84-.62-2.38-.98-3.92-3.4-4.04-3.56-.12-.16-.96-1.28-.96-2.44 0-1.16.6-1.72.82-1.96.22-.22.48-.28.64-.28h.46c.14 0 .34.04.52.42.2.42.66 1.62.72 1.74.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.26.3-.36.4-.12.12-.24.26-.1.5.14.24.62 1.02 1.34 1.66.92.82 1.7 1.08 1.94 1.2.24.1.38.08.52-.06.14-.14.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.38.66 1.62.78.24.12.4.18.46.28.06.1.06.58-.14 1.14z"></path>
+        <svg viewBox="0 0 24 24" fill="#7e4cb7" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 13.6c-.2.56-.98 1.02-1.62 1.16-.44.08-.98.14-2.84-.62-2.38-.98-3.92-3.4-4.04-3.56-.12-.16-.96-1.28-.96-2.44 0-1.16.6-1.72.82-1.96.22-.22.48-.28.64-.28h.46c.14 0 .34.04.52.42.2.42.66 1.62.72 1.74.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.26.3-.36.4-.12.12-.24.26-.1.5.14.24.62 1.02 1.34 1.66.92.82 1.7 1.08 1.94 1.2.24.1.38.08.52-.06.14-.14.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.38.66 1.62.78.24.12.4.18.46.28.06.1.06.58-.14 1.14z"/>
         </svg>
       </div>
       <div class="link-info">
@@ -500,11 +535,11 @@
       </div>
       <span class="link-arrow">›</span>
     </a>
-    
-    <a class="link-btn" href="https://t.me/bimmergarage" target="_blank">
+
+    <a href="https://t.me/bimmergarage" class="link-btn" target="_blank" data-track="telegram">
       <div class="link-icon icon-telegram">
-        <svg fill="#0088cc" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.68 7.92c-.12.56-.46.7-.92.44l-2.56-1.88-1.24 1.2c-.14.14-.26.26-.52.26l.18-2.6 4.72-4.26c.2-.18-.04-.28-.32-.1L7.4 13.76l-2.52-.78c-.54-.18-.56-.54.12-.8l9.84-3.8c.46-.16.86.1.8.42z"></path>
+        <svg viewBox="0 0 24 24" fill="#0088cc" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.68 7.92c-.12.56-.46.7-.92.44l-2.56-1.88-1.24 1.2c-.14.14-.26.26-.52.26l.18-2.6 4.72-4.26c.2-.18-.04-.28-.32-.1L7.4 13.76l-2.52-.78c-.54-.18-.56-.54.12-.8l9.84-3.8c.46-.16.86.1.8.42z"/>
         </svg>
       </div>
       <div class="link-info">
@@ -513,22 +548,22 @@
       </div>
       <span class="link-arrow">›</span>
     </a>
-    
-    <a class="link-btn" href="https://www.instagram.com/bimmergaragekovel/" target="_blank">
+
+    <a href="https://www.instagram.com/bimmergaragekovel/" class="link-btn" target="_blank" data-track="instagram">
       <div class="link-icon icon-instagram">
-        <svg fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <lineargradient id="ig" x1="0%" x2="100%" y1="100%" y2="0%">
-              <stop offset="0%" stop-color="#f09433"></stop>
-              <stop offset="25%" stop-color="#e6683c"></stop>
-              <stop offset="50%" stop-color="#dc2743"></stop>
-              <stop offset="75%" stop-color="#cc2366"></stop>
-              <stop offset="100%" stop-color="#bc1888"></stop>
-            </lineargradient>
+            <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#f09433"/>
+              <stop offset="25%" stop-color="#e6683c"/>
+              <stop offset="50%" stop-color="#dc2743"/>
+              <stop offset="75%" stop-color="#cc2366"/>
+              <stop offset="100%" stop-color="#bc1888"/>
+            </linearGradient>
           </defs>
-          <rect fill="url(#ig)" height="20" rx="5" width="20" x="2" y="2"></rect>
-          <circle cx="12" cy="12" fill="none" r="4" stroke="white" stroke-width="1.5"></circle>
-          <circle cx="17" cy="7" fill="white" r="1"></circle>
+          <rect x="2" y="2" width="20" height="20" rx="5" fill="url(#ig)"/>
+          <circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.5" fill="none"/>
+          <circle cx="17" cy="7" r="1" fill="white"/>
         </svg>
       </div>
       <div class="link-info">
@@ -537,11 +572,11 @@
       </div>
       <span class="link-arrow">›</span>
     </a>
-    
-    <a class="link-btn" href="https://www.tiktok.com/@bimmer_garage1" target="_blank">
+
+    <a href="https://www.tiktok.com/@bimmer_garage1" class="link-btn" target="_blank" data-track="tiktok">
       <div class="link-icon icon-tiktok">
-        <svg fill="white" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"></path>
+        <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/>
         </svg>
       </div>
       <div class="link-info">
@@ -550,13 +585,13 @@
       </div>
       <span class="link-arrow">›</span>
     </a>
-    
-    <a class="link-btn" href="https://www.bimmergarage.com.ua/" target="_blank">
+
+    <a href="https://www.bimmergarage.com.ua/" class="link-btn" target="_blank" data-track="website">
       <div class="link-icon icon-web">
-        <svg fill="none" stroke="#1a6fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="2" x2="22" y1="12" y2="12"></line>
-          <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"></path>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a6fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
         </svg>
       </div>
       <div class="link-info">
@@ -565,12 +600,114 @@
       </div>
       <span class="link-arrow">›</span>
     </a>
+
   </div>
 
   <div class="city-badge">
     <span>📍 Ковель, Україна</span>
   </div>
 
+  <div class="admin-access">
+    <button id="adminToggle" type="button" aria-label="admin">⚙</button>
+  </div>
+
 </div>
+
+<div class="admin-overlay" id="adminModal">
+  <div class="admin-panel">
+    <button class="admin-close" id="adminClose">&times;</button>
+    <h2>СТАТИСТИКА</h2>
+
+    <form id="adminForm">
+      <input type="password" id="adminPass" placeholder="Пароль адміна" autocomplete="off">
+      <button type="submit">Увійти</button>
+      <div class="admin-error" id="adminError"></div>
+    </form>
+
+    <div id="adminBody"></div>
+  </div>
+</div>
+
+<script>
+  // ===== НАЛАШТУВАННЯ: встав адресу свого backend-файлу =====
+  const API_URL = 'https://www.bimmergarage.com.ua/visitka_api.php';
+  // ============================================================
+
+  function track(label) {
+    try {
+      const img = new Image();
+      img.src = API_URL + '?action=hit&label=' + encodeURIComponent(label) + '&_=' + Date.now();
+    } catch (e) {}
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    track('page_view');
+
+    document.querySelectorAll('[data-track]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        track(el.getAttribute('data-track'));
+      });
+    });
+
+    const adminToggle = document.getElementById('adminToggle');
+    const adminModal = document.getElementById('adminModal');
+    const adminClose = document.getElementById('adminClose');
+    const adminForm = document.getElementById('adminForm');
+    const adminPassInput = document.getElementById('adminPass');
+    const adminBody = document.getElementById('adminBody');
+    const adminError = document.getElementById('adminError');
+
+    adminToggle.addEventListener('click', function () {
+      adminModal.classList.add('open');
+    });
+    adminClose.addEventListener('click', function () {
+      adminModal.classList.remove('open');
+      adminBody.innerHTML = '';
+      adminError.textContent = '';
+    });
+    adminModal.addEventListener('click', function (e) {
+      if (e.target === adminModal) {
+        adminModal.classList.remove('open');
+      }
+    });
+
+    adminForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      adminError.textContent = '';
+      adminBody.innerHTML = '<p class="admin-loading">Завантаження…</p>';
+      const pass = adminPassInput.value;
+
+      fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'action=stats&pass=' + encodeURIComponent(pass)
+      })
+        .then(function (r) {
+          if (!r.ok) throw new Error('forbidden');
+          return r.json();
+        })
+        .then(renderStats)
+        .catch(function () {
+          adminBody.innerHTML = '';
+          adminError.textContent = 'Невірний пароль або помилка з\'єднання';
+        });
+    });
+
+    function renderStats(data) {
+      let html = '<div class="admin-total">Всього подій: <b>' + data.total + '</b></div>';
+      html += '<div class="admin-bars">';
+      data.by_label.forEach(function (item) {
+        html += '<div class="admin-bar-row"><span>' + item.label + '</span><span>' + item.count + '</span></div>';
+      });
+      html += '</div>';
+      html += '<div class="admin-recent-title">Останні події</div><div class="admin-recent">';
+      data.recent.forEach(function (item) {
+        html += '<div class="admin-recent-row"><span>' + item.label + '</span><span>' + item.ts + '</span></div>';
+      });
+      html += '</div>';
+      adminBody.innerHTML = html;
+    }
+  });
+</script>
 </body>
 </html>
